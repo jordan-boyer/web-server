@@ -14,6 +14,9 @@ app.get('/about', middleware.requireAuthentication, function (req, res) {
 	res.send("About Us!");
 });
 
+var dirname = process.env.PORT ? __dirname + "/public" : __dirname + "\\public"
+console.log(dirname);
+
 app.use(express.static(__dirname + "\\public"));
 
 app.listen(PORT, function() {
